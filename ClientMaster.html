@@ -1,0 +1,166 @@
+<html ng-app="crudModule">
+    <head>
+        <title>ClientDetails</title>
+        <style>
+                   table#tblContainer
+                    {
+                        width: 50%;
+                        height: 70%;
+                        border:2px solid mediumblue;
+                    }
+                   #tblContainer, #tblcollections, #tblCRUD, td 
+                    {
+                
+                        color: black;
+                        margin-left: auto;
+                        margin-right: auto;          
+                    }
+                    th 
+                    {
+                        background-color:darkgray;
+                    }
+                    a
+                    {
+                        text-decoration:none;
+                    }
+                    #dvcollection
+                    {
+                        height: 300px;
+                        overflow-y: scroll;
+                    }
+        </style>
+    </head>
+<body> 
+ <h2 style="text-align:center;">Client Details Form</h2>
+ 
+     <table id="tblContainer" ng-controller="crudController" background="wallpaper.png">
+        <tbody>
+          <tr>
+            <td>
+                <table id="tblCRUD">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-size:18px">
+                                <span><b>Company Details</b></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Client Id</span>
+                            </td>
+                            <td>
+                                <input type="text" id="clientid" required="true" ng-model="clientid"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Company Name</span>
+                            </td>
+                            <td>
+                                <input type="text" id="name" required="true" ng-model="name"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Address</span>
+                            </td>
+                            <td>
+                                <input type="text" id="address" required="" ng-model="address"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Phone</span>
+                            </td>
+                            <td>
+                                <input type="number" id="phone" required="" ng-model="phone"/>
+                            </td>
+    
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Company Email</span>
+                            </td>
+                            <td>
+                                <input type="text" id="cmp_email" required="" ng-model="cmp_email"/>
+                            </td>
+    
+                        </tr>
+                        <tr>
+                            <td colspan="2" style="font-size:18px">
+                                <span><b>Contact Person Details</b></span>
+                            </td>
+                           
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Contact Person</span>
+                            </td>
+                            <td>
+                                <input type="name" id="person_name" required="" ng-model="person_name"/>
+                            </td>
+    
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Phone Number</span>
+                            </td>
+                            <td>
+                                <input type="number" id="person_phone" required="" ng-model="person_phone"/>
+                            </td>
+    
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Email</span>
+                            </td>
+                            <td>
+                                <input type="text" id="person_email" required="" ng-model="person_email"/>
+                            </td>
+    
+                        </tr>
+                         <tr>
+                            <td>
+                                <span>Billing And Shipping Address</span>
+                            </td>
+                            <td>
+                                <textarea style="width:171px" type="text" id="shipping_add" required="" ng-model="shipping_add" ></textarea>
+                            </td>
+    
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input style="color:mediumblue;width:90px;height:30px;border-radius:10px" type="button" id="submit" value="Submit" ng-click="save()" />
+                                <input style="color:mediumblue;width:90px;height:30px;border-radius:10px" type="button" id="clear" value="Clear" ng-click="clear()" />
+                                <button style="color:mediumblue;width:90px;height:30px;border-radius:10px"><a href="ShowRecords.html">Get Record</a></button>
+                                <input type="button" style="color:mediumblue;width:90px;height:30px;border-radius:10px" id="delete" value="Delete" ng-click="delete()" />
+                            </td>
+                        </tr>
+                     </tbody>
+                   </table>
+                <div>{{Message}}</div>
+              </td>
+            </tr>
+            
+    </tbody>
+</table>
+  
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./app.js"></script>
+<script src="./service.js"></script>
+<script src="./controller.js"></script>
+
+</body>
+</html>

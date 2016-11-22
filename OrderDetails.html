@@ -1,0 +1,147 @@
+<html ng-app="orderModule">
+    <head>
+        <title>OrderDetails</title>
+        <style>
+                 
+            table#tblContainer
+            { 
+                   width: 50%;
+                   height: 60%;
+                   border:2px solid mediumblue;
+            }
+            
+        #tblContainer, #tblcollections, #tblCRUD, td 
+        {
+            /*border:3px solid maroon;*/
+            /*background-color: mintcream;*/
+            color: black;
+            margin-left: auto;
+            margin-right: auto;          
+        }
+        th {
+            background-color:darkgray;
+        }
+         #tblcollections td
+        {
+             border:1px solid mediumblue;
+        }
+        th {
+            background-color:darkgray;
+        }
+        a
+        {
+           text-decoration:none;
+        } 
+ 
+        #dvcollection {
+            height: 300px;
+            overflow-y: scroll;
+        }
+        </style>
+    </head>
+    <body > 
+<h1 style="text-align:center; color:mediumblue">Order Details Form<h2>
+ 
+     <table id="tblContainer" ng-controller="orderController" background="wallpaper.png">
+        <tbody>
+          <tr>
+            <td>
+                <table id="tblCRUD">
+                    <tbody>
+                         <tr>
+                            <td colspan="2" style="font-size:20px;color:mediumblue">
+                                <span><b>Order Details</b></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Order id</span>
+                            </td>
+                            <td>
+                                <input type="text" id="orderid" required="true" ng-model="orderid"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Purchase Order NO</span>
+                            </td>
+                            <td>
+                                <input type="text" id="purchase_order_no" required="true" ng-model="purchase_order_no"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Purchase Order Receive Date</span>
+                            </td>
+                            <td>
+                                <input type="text" id="po_date" required="true" ng-model="po_date"/>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <span>Last Date Of Delivary</span>
+                            </td>
+                            <td>
+                                <input type="text" id="last_date" required="" ng-model="last_date"/>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>
+                                <span>Service Required</span>
+                            </td>
+                            <td>
+                                <input type="text" id="service" required="" ng-model="service"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Number Of Units</span>
+                            </td>
+                            <td>
+                                <input type="text" id="numberofunits" required="" ng-model="numberofunits"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>Price per unit</span>
+                            </td>
+                            <td>
+                                <input type="number" id="priceperunit" required="" ng-model="priceperunit"/>
+                            </td>
+    
+                        </tr>
+                      
+                         <tr>
+                            <td></td>
+                            <td>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            </td>
+                        </tr> 
+                    
+                       <tr>
+                            
+                         <td colspan="2" align="center">
+                              
+                                <input type="button" style="color:mediumblue;width:90px;height:30px;border-radius:10px" id="new" value="New" ng-click="clear()" />
+                                <input type="button" style="color:mediumblue;width:90px;height:30px;border-radius:10px" id="save" value="Save" ng-click="save()" />
+                                <button style="color:mediumblue;width:90px;height:30px;border-radius:10px"><a href="ShowOrderDetails.html">Get Record</a></button>
+                                <input type="button" style="color:mediumblue;width:90px;height:30px;border-radius:10px" id="delete" value="Delete" ng-click="delete()" />
+                              
+                            </td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+                <div>{{Message}}</div>
+            </td>
+            </tr>
+            
+    </tbody>
+</table>
+  
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./orderapp.js"></script>
+<script src="./orderservice.js"></script>
+<script src="./ordercontroller.js"></script>
+</body>
+</html>

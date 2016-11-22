@@ -1,0 +1,90 @@
+<html ng-app="crudModule">
+    <head>
+        <title>ClientRecords</title>
+        <style>
+                    table#tblContainer
+                    {
+                            width: 70%;
+                        
+                            color: black;
+                            margin-left: auto;
+                            margin-right: auto;     
+                            border-collapse: collapse; 
+                    }
+                    #tblcollections, #tblCRUD
+                    {
+                            color: black;
+                            margin-left: auto;
+                            margin-right: auto;     
+                            border-collapse: collapse;     
+                    }
+                    #tblcollections td
+                    { 
+                            border:1px solid mediumblue;
+                    }
+                    th
+                    {
+                            background-color:darkgray;
+                    }
+        
+                     #dvcollection 
+                    {
+                            height: 100%;
+                            overflow-y: scroll;
+                    }
+        </style>
+    </head>
+ <body> 
+ <h2 style="text-align:center;color:mediumblue">Listing Clients</h2>
+ 
+     <table id="tblContainer" ng-controller="crudController" background="wallpaper.png">
+        <tbody >
+          <tr >
+            <td>
+                <div id="dvcollection">
+                    <table id="tblcollections" >
+                        <thead>
+                            <tr>
+                                <th>Client Id</th>
+                                <th>Company Name</th>
+                                <th>Address</th>
+                                <th>Phone</th>  
+                                <th>Company Email</th> 
+                                <th>Contact Person</th> 
+                                <th>Phone Number</th> 
+                                <th>Email</th> 
+                                <th>Billing And Shipping Address</th>                             
+                            </tr>
+                        </thead>
+                        <tbody  ng-repeat="c in Client" >
+                            <tr> 
+
+                                <td> <span>{{c.clientid}}</span></td>
+                                <td> <span>{{c.name}}</span></td>
+                                <td> <span>{{c.address}}</span></td>
+                                <td> <span>{{c.phone}}</span></td>
+                                <td> <span>{{c.cmp_email}}</span></td>
+                                <td> <span>{{c.person_name}}</span></td>
+                                <td> <span>{{c.person_phone}}</span></td>
+                                <td> <span>{{c.person_email}}</span></td>
+                                <td> <span>{{c.shipping_add}}</span></td>
+                            </tr>
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </td>
+        </tr>
+                    
+    </tbody>
+</table>
+</tbody>
+</table>
+  
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./app.js"></script>
+<script src="./service.js"></script>
+<script src="./controller.js"></script>
+
+</body>
+</html>

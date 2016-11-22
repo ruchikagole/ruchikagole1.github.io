@@ -1,0 +1,86 @@
+<html ng-app="orderModule">
+    <head>
+        <title>OrderRecords</title>
+        <style>
+            table#tblContainer
+            {
+                     width: 70%;
+                   
+                    color: black;
+                    margin-left: auto;
+                    margin-right: auto;     
+                    border-collapse: collapse; 
+            }
+         #tblcollections, #tblCRUD
+        {
+            /*border:1px solid mediumblue;*/
+            
+            color: black;
+            margin-left: auto;
+            margin-right: auto;     
+             border-collapse: collapse;     
+        }
+       #tblcollections td
+        {
+             border:1px solid mediumblue;
+             
+        }
+        th {
+            background-color:darkgray;
+        }
+ 
+        #dvcollection {
+            height: 100%;
+            overflow-y: scroll;
+        }
+        </style>
+    </head>
+    <body> 
+<h2 style="text-align:center;color:mediumblue">Listing Orders</h2>
+ 
+     <table id="tblContainer" ng-controller="orderController" background="wallpaper.png">
+        <tbody>
+          <tr>
+            <td>
+                <div id="dvcollection">
+                    <table id="tblcollections">
+                        <thead>
+                            <tr>
+                                <th>orderid</th>
+                                <th>purchase_order_no</th>
+                                <th>po_date</th>
+                                <th>last_date</th> 
+                                <th>service</th> 
+                                <th>numberofunits</th> 
+                                <th>priceperunit</th> 
+                                                           
+                            </tr>
+                        </thead>
+                        <tbody ng-repeat="o in Order">
+                            <tr>
+                                <td> <span>{{o.orderid}}</span></td>
+                                <td> <span>{{o.purchase_order_no}}</span></td>
+                                <td> <span>{{o.po_date}}</span></td>
+                                <td> <span>{{o.last_date}}</span></td>
+                                <td> <span>{{o.service}}</span></td>
+                                <td> <span>{{o.numberofunits}}</span></td>
+                                <td> <span>{{o.priceperunit}}</span></td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </tbody></table>
+ 
+ 
+ 
+<script src="./bower_components/angular/angular.min.js"></script>
+<script src="./orderapp.js"></script>
+<script src="./orderservice.js"></script>
+<script src="./ordercontroller.js"></script>
+    </body>
+</html>
+
+
